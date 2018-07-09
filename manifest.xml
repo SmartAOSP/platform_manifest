@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <!-- Remotes -->
+
+  <remote  name="github"
+           fetch="https://github.com/" />
+
+  <!-- Debloat -->
+
+  <remove-project name="device/asus/fugu" />
+  <remove-project name="device/asus/fugu-kernel" />
+  <remove-project name="device/google/dragon" />
+  <remove-project name="device/google/dragon-kernel" />
+  <remove-project name="device/google/marlin" />
+  <remove-project name="device/google/marlin-kernel" />
+  <remove-project name="device/google/muskie" />
+  <remove-project name="device/google/taimen" />
+  <remove-project name="device/google/wahoo" />
+  <remove-project name="device/google/wahoo-kernel" />
+  <remove-project name="device/huawei/angler" />
+  <remove-project name="device/huawei/angler-kernel" />
+  <remove-project name="device/lge/bullhead" />
+  <remove-project name="device/lge/bullhead-kernel" />
+  <remove-project name="device/linaro/hikey" />
+  <remove-project name="device/linaro/hikey-kernel" />
+  <remove-project name="platform/packages/apps/Browser2" />
+  <remove-project name="platform/packages/apps/Gallery" />
+  <remove-project name="platform/packages/apps/Gallery2" />
+  <remove-project name="platform/packages/apps/Launcher2" />
+  <remove-project name="platform/packages/apps/Music" />
+  <remove-project name="platform/packages/apps/QuickSearchBox" />
+  <remove-project name="platform/packages/inputmethods/OpenWnn" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-eabi-4.8" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" />
+  <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
+  <remove-project name="platform/prebuilts/gdb/darwin-x86" />
+  <remove-project name="platform/prebuilts/go/darwin-x86" />
+  <remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" />
+
+  <!-- Remove AOSP -->
+
+  <remove-project name="platform/build" />
+  <remove-project name="platform/build/soong" />
+  <remove-project name="platform/bionic" />
+  <remove-project name="platform/frameworks/av" />
+  <remove-project name="platform/frameworks/native" />
+  <remove-project name="platform/hardware/broadcom/wlan" />
+  <remove-project name="platform/hardware/interfaces" />
+  <remove-project name="platform/hardware/qcom/audio" />
+  <remove-project name="platform/hardware/qcom/bt" />
+  <remove-project name="platform/hardware/qcom/display" />
+  <remove-project name="platform/hardware/qcom/gps" />
+  <remove-project name="platform/hardware/qcom/keymaster" />
+  <remove-project name="platform/hardware/qcom/media" />
+  <remove-project name="platform/hardware/qcom/msm8960" />
+  <remove-project name="platform/hardware/qcom/power" />
+  <remove-project name="platform/hardware/ril" />
+  <remove-project name="platform/packages/apps/Nfc" />
+  <remove-project name="platform/system/bt" />
+  <remove-project name="platform/system/core" />
+  <remove-project name="platform/system/nfc" />
+  <remove-project name="platform/system/sepolicy" />
+
+
+  <!-- SmartAOSP -->
+
+  <project path="build/make" name="SmartAOSP/platform_build" remote="github" revision="8.1.0" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="build/soong" name="SmartAOSP/platform_build_soong" remote="github" revision="8.1.0" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+  <project path="bionic" name="SmartAOSP/platform_bionic" remote="github" revision="8.1.0" />
+  <project path="device/lge/mako" name="SmartAOSP/device_lge_mako" remote="github" revision="8.1.0" />
+  <project path="device/lge/occam" name="SmartAOSP/device_lge_occam" remote="github" revision="8.1.0" />
+  <project path="external/stlport" name="SmartAOSP/platform_external_stlport" remote="github" revision="8.1.0" />
+  <project path="frameworks/av" name="SmartAOSP/platform_frameworks_av" remote="github" revision="8.1.0" />
+  <project path="frameworks/native" name="SmartAOSP/platform_frameworks_native" remote="github" revision="8.1.0" />
+  <project path="hardware/broadcom/wlan" name="SmartAOSP/platform_hardware_broadcom_wlan" remote="github" revision="8.1.0" />
+  <project path="hardware/interfaces" name="SmartAOSP/platform_hardware_interfaces" remote="github" revision="8.1.0" />
+  <project path="hardware/qcom/audio" name="SmartAOSP/platform_hardware_qcom_audio" remote="github" revision="8.1.0" />
+  <project path="hardware/qcom/bt" name="SmartAOSP/platform_hardware_qcom_bt" remote="github" revision="8.1.0" />
+  <project path="hardware/qcom/display" name="SmartAOSP/platform_hardware_qcom_display" remote="github" revision="8.1.0" />
+  <project path="hardware/qcom/gps" name="SmartAOSP/platform_hardware_qcom_gps" remote="github" revision="8.1.0" />
+  <project path="hardware/qcom/keymaster" name="SmartAOSP/platform_hardware_qcom_keymaster" remote="github" revision="8.1.0" />
+  <project path="hardware/qcom/media" name="SmartAOSP/platform_hardware_qcom_media" remote="github" revision="8.1.0" />
+  <project path="hardware/qcom/power" name="SmartAOSP/platform_hardware_qcom_power" remote="github" revision="8.1.0" />
+  <project path="hardware/ril" name="SmartAOSP/platform_hardware_ril" remote="github" revision="8.1.0" />
+  <project path="kernel/qcom/msm8960" name="SmartAOSP/kernel_qcom_msm8960" remote="github" revision="8.1.0" />
+  <project path="packages/apps/Nfc" name="SmartAOSP/platform_packages_apps_Nfc" remote="github" revision="8.1.0" />
+  <project path="system/bt" name="SmartAOSP/platform_system_bt" remote="github" revision="8.1.0" />
+  <project path="system/core" name="SmartAOSP/platform_system_core" remote="github" revision="8.1.0" />
+  <project path="system/nfc" name="SmartAOSP/platform_system_nfc" remote="github" revision="8.1.0" />
+  <project path="system/sepolicy" name="SmartAOSP/platform_system_sepolicy" remote="github" revision="8.1.0" />
+  <project path="vendor/broadcom" name="SmartAOSP/platform_vendor_broadcom" remote="github" revision="8.1.0" />
+  <project path="vendor/lge" name="SmartAOSP/platform_vendor_lge" remote="github" revision="8.1.0" />
+  <project path="vendor/qcom" name="SmartAOSP/platform_vendor_qcom" remote="github" revision="8.1.0" />
+  <project path="vendor/smart" name="SmartAOSP/platform_vendor_smart" remote="github" revision="8.1.0" />
+  <project path="vendor/widevine" name="SmartAOSP/platform_vendor_widevine" remote="github" revision="8.1.0" />
+
+</manifest>
